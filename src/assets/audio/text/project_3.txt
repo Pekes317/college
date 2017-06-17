@@ -1,0 +1,4 @@
+content=
+<p align="center"><front size="20 px"><u><b>Project 3</b></u></front></p>
+<p align="center">This mix was created by using the resulting sounds of Project 3 and recomposed. There has also been some filters to the sounds to distinguish it as it own piece.</p>
+

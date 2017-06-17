@@ -4,12 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ColHomeComponent } from './col-home/col-home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ColHomeComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule

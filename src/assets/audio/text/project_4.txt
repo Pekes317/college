@@ -1,0 +1,4 @@
+content=
+<p align="center"><front size="20 px"><u><b>Project 4</b></u></front></p>
+<p align="center">This mix was created by using manipulating different sound bites into new sounds and then arranging them in a musical fashion. The sounds were placed along with a drum track.</p>
+
