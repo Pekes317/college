@@ -6,11 +6,15 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ColHomeComponent } from './col-home/col-home.component';
+import { ColNavComponent } from './col-nav/col-nav.component';
+import { ColSoundComponent } from './col-sound/col-sound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColHomeComponent
+    ColHomeComponent,
+    ColNavComponent,
+    ColSoundComponent
   ],
   imports: [
     AppRoutingModule,
