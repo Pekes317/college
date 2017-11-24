@@ -11,5 +11,4 @@ export class ColSoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {  }
-
 }

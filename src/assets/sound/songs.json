@@ -1,0 +1,38 @@
+[
+	{
+		"mp3": "audio/project_1.mp3",
+		"song": "Project 1",
+		"dur": "00:18",
+		"brief": "text/project_1.txt"
+	},
+	{
+		"mp3": "audio/project_2.mp3",
+		"song": "Project 2",
+		"dur": "01:14",
+		"brief": "text/project_2.txt"
+	},
+	{
+		"mp3": "audio/project_3.mp3",
+		"song": "Project 3",
+		"dur": "01:48",
+		"brief": "text/project_3.txt"
+	},
+	{
+		"mp3": "audio/project_4.mp3",
+		"song": "Project 4",
+		"dur": "01:32",
+		"brief": "text/project_4.txt"
+	},
+	{
+		"mp3": "audio/Drinking_Mix.mp3",
+		"song": "Drinking Mix",
+		"dur": "03:38",
+		"brief": "text/dMix.txt"
+	},
+	{
+		"mp3": "audio/Midi_Mania.mp3",
+		"song": "Midi Mix",
+		"dur": "05:26",
+		"brief": "text/mMix.txt"
+	}
+]
