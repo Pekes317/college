@@ -1,4 +1,4 @@
 function actionCall(path) {
-	console.log('Flash', path);
-	return path;
+	let flashNav = new CustomEvent('FlashNav', { detail: path });
+	document.dispatchEvent(flashNav);
 }
