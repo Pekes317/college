@@ -22,7 +22,6 @@
         "styles.scss"
       ],
       "scripts": [
-        "../node_modules/swfobject/index.js",
         "scripts.ts"
       ],
       "environmentSource": "environments/environment.ts",
