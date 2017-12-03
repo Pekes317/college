@@ -1,3 +1,2 @@
-content=
-<p align="center"><front size="20 px"><u><b>Midi Mix</b></u></front></p>
+<p align="center"><font size="20"><u><b>Midi Mix</b></u></font></p>
 <p align="center">This mix uses midi in a number of ways. The first part uses midi in the most traditional use where it controls midi device with built-in samples. The second part I used MachFive to create my own midi instrument with samples I used in the Drinking Mix. The final section is a combinations of the first two.</p>

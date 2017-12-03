@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<songs>
- <song url="audio/project_1.mp3" song="Project 1" dur="00:18" />
- <song url="audio/project_2.mp3" song="Project 2" dur="01:14" />
- <song url="audio/project_3.mp3" song="Project 3" dur="01:48" />
- <song url="audio/project_4.mp3" song="Project 4" dur="01:32" />
- <song url="audio/Drinking_Mix.mp3" song="Drinking Mix" dur="03:38" />
- <song url="audio/Midi_Mania.mp3" song="Midi Mix" dur="05:26" />
-</songs>

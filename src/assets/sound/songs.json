@@ -1,38 +1,44 @@
 [
 	{
-		"mp3": "audio/project_1.mp3",
+		"id": 1,
 		"song": "Project 1",
 		"dur": "00:18",
-		"brief": "text/project_1.txt"
+		"mp3": "assets/sound/audio/project_1.mp3",
+		"brief": "assets/sound/text/project_1.txt"
 	},
 	{
-		"mp3": "audio/project_2.mp3",
+	    "id": 2,
 		"song": "Project 2",
 		"dur": "01:14",
-		"brief": "text/project_2.txt"
+		"mp3": "assets/sound/audio/project_2.mp3",
+		"brief": "assets/sound/text/project_2.txt"
 	},
 	{
-		"mp3": "audio/project_3.mp3",
+	    "id": 3,
 		"song": "Project 3",
 		"dur": "01:48",
-		"brief": "text/project_3.txt"
-	},
+		"mp3": "assets/sound/audio/project_3.mp3",
+		"brief": "assets/sound/text/project_3.txt"
+	}, 
 	{
-		"mp3": "audio/project_4.mp3",
+	    "id": 4,
 		"song": "Project 4",
 		"dur": "01:32",
-		"brief": "text/project_4.txt"
+		"mp3": "assets/sound/audio/project_4.mp3",
+		"brief": "assets/sound/text/project_4.txt"
 	},
 	{
-		"mp3": "audio/Drinking_Mix.mp3",
+		"id": 5,
 		"song": "Drinking Mix",
 		"dur": "03:38",
-		"brief": "text/dMix.txt"
+		"mp3": "assets/sound/audio/Drinking_Mix.mp3",
+		"brief": "assets/sound/text/dMix.txt"
 	},
 	{
-		"mp3": "audio/Midi_Mania.mp3",
+		"id": 6,
 		"song": "Midi Mix",
 		"dur": "05:26",
-		"brief": "text/mMix.txt"
+		"mp3": "aassets/sound/udio/Midi_Mania.mp3",
+		"brief": "assets/sound/text/mMix.txt"
 	}
 ]
