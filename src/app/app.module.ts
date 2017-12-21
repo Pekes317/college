@@ -25,7 +25,7 @@ import { ColAboutComponent } from './col-about/col-about.component';
     ColAboutComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'college' }),
     FormsModule,
     HttpModule,
     routing
