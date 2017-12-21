@@ -1,0 +1,51 @@
+.maintext {
+	font-family: LubalinGraph-Demi, Georgia, serif;
+	color: #818181;
+	font-size: 13px;
+	line-height: 1.75em;
+}
+a:link {
+	text-decoration: none;
+}
+
+.unbold {
+	font-weight: 400;
+}
+
+h3 {
+	color: #818181;
+	font-family: LubalinGraph-Demi, Georgia, serif;
+}
+
+h4 {
+	font-family: LubalinGraph-Demi, Georgia, serif;
+	color: #818181;
+	font-size: smaller;
+}
+.bolder {
+	font-weight: bolder;
+}
+.formtext {
+	font-family: LubalinGraph-Demi, Georgia, serif;
+	padding: 10px;
+}
+
+.maptext {
+	font-family: LubalinGraph-Demi, Georgia, serif;
+	font-size: 13px;
+}
+.sitecolor {
+	color: #E0BC69;
+	padding: 5px;
+}
+a:visited {
+	color: #5EC2FF;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	color: #FFFFFF;
+	text-decoration: none;
+}

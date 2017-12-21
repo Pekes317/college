@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+#pos {
+	height: 919px;
+	width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+body {
+	background-color: #113494;
+}
+#bullet1 {
+	position: relative;
+	left: 149px;
+	top: -1613px;
+}
+
+#bullet2 {
+	position: relative;
+	left: 110px;
+	top: -1570px;
+}
+
+#bullet3 {
+	position: relative;
+	left: 71px;
+	top: -1515px;
+}
+
+#bullet4 {
+	position: relative;
+	left: 32px;
+	top: -1460px;
+}
+#text3 {
+	position: relative;
+	top: 230px;
+	width: 400px;
+	left: 200px;
+	z-index: 6;
+}
+#text4 {
+	position: relative;
+	left: 45px;
+	top: 325px;
+	z-index: 8;
+	width: 1200px;
+}
+
+
+
+#text {
+	width:525px;
+	height:60px;
+	z-index:1;
+	position: relative;
+	top: 250px;
+	left: 75px;
+}
+#pic2 {
+	position: relative;
+	height: 60px;
+	width: 528px;
+	top: -1685px;
+	left: 60px;
+}
+
+#design {
+	position: relative;
+	left: 0px;
+	top: -534px;
+}
+
+#pic {
+	background-color: #113494;
+	position: relative;
+	left: 660px;
+	top: -1313px;
+	height: 377px;
+	width: 562px;
+}
+#img {
+	position: relative;
+	left: 5px;
+	top: 5px;
+}
+#text2 {
+	position: relative;
+	top: 230px;
+	width: 400px;
+	left: 150px;
+	z-index: 6;
+}

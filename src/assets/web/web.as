@@ -1,110 +1,129 @@
-﻿var webUrl: String;
+﻿package {
 
-pageBtn.addEventListener(MouseEvent.CLICK, openPage);
+	import flash.display.MovieClip;
+	import flash.events.Event;
+	import flash.net.navigateToURL;
+	import flash.events.MouseEvent;
+	import flash.display.Bitmap;
+	import flash.net.URLRequest
 
-function openPage(e) {
-	if (webUrl != null) {
-		navigateToURL(new URLRequest(webUrl), "_blank");
-	}
-}
+	import classes.ag1;
+	import classes.ag2;
+	import classes.home;
+	import classes.kungfu;
+	import classes.lion;
+	import classes.mario;
+	import classes.Playlist;
+	import classes.ScrollNav;
 
-navi_mc.addEventListener(MouseEvent.MOUSE_OVER, fl_MouseOverHandler);
+	public class Web extends MovieClip {
 
-function fl_MouseOverHandler(event: MouseEvent): void {
-	navi_mc.addEventListener(MouseEvent.MOUSE_WHEEL, fl_MouseWheelHandler);
-}
+		public var urlData: Playlist;
+		public var urlList: Array;
+		public var nav: ScrollNav;
+		public var webUrl: String;
 
-function fl_MouseWheelHandler(event: MouseEvent): void {
-	var i = navi_mc.currentFrame;
-	i -= event.delta;
+		public function Web() {
+			// constructor code
+			this.urlData = new Playlist('assets/web/sites.json');
+			this.addListener();
+			this.nav = new ScrollNav(navi_mc)
+		}
 
-	navi_mc.gotoAndStop(i);
-}
+		private function addListener() {
+			this.urlData.urlLoad.addEventListener(Event.COMPLETE, this.getList);
+			btn_mailto.addEventListener(MouseEvent.CLICK, this.mailto);
+			pageBtn.addEventListener(MouseEvent.CLICK, this.openPage);
+			navi_mc.homeBtn.addEventListener(MouseEvent.CLICK, this.homeClick);
+			navi_mc.firstBtn.addEventListener(MouseEvent.CLICK, this.firstClick);
+			navi_mc.secondBtn.addEventListener(MouseEvent.CLICK, this.secondClick);
+			navi_mc.afroBtn.addEventListener(MouseEvent.CLICK, this.afroClick);
+			navi_mc.fableBtn.addEventListener(MouseEvent.CLICK, this.fableClick);
+			navi_mc.powerBtn.addEventListener(MouseEvent.CLICK, this.powerClick);
+		}
 
-btn_mailto.addEventListener(MouseEvent.CLICK, mailto);
+		private function afroClick(e: MouseEvent) {
+			this.cleanViewer();
+			var picObj: kungfu = new kungfu(-75, 10);
+			var pic: Bitmap = new Bitmap(picObj);
+			pic.x = -75;
+			pic.y = 10;
 
-function mailto(event: MouseEvent): void {
-	navigateToURL(new URLRequest("mailto:prmast@projectmast.com?subject=Feedback"), "_blank");
-}
+			this.webUrl = this.urlList[0]['url'];
+			viewer.addChild(pic);
+		}
 
-navi_mc.homeBtn.addEventListener(MouseEvent.CLICK, homeClick);
+		private function cleanViewer() {
+			while (viewer.numChildren > 0) {
+				viewer.removeChildAt(0);
+			}
+		}
 
-function homeClick(e) {
-	cleanViewer();
-	var picObj: home = new home();
-	var pic: Bitmap = new Bitmap(picObj);
+		private function fableClick(e) {
+			this.cleanViewer();
+			var picObj: lion = new lion(-75, 60);
+			var pic: Bitmap = new Bitmap(picObj);
+			pic.x = -75;
+			pic.y = 60;
 
-	webUrl = "https://college.projectmast.com";
-	viewer.addChild(pic);
-}
+			this.webUrl = this.urlList[1]['url']
+			viewer.addChild(pic);
+		}
 
-navi_mc.firstBtn.addEventListener(MouseEvent.CLICK, firstClick);
+		private function firstClick(e: MouseEvent) {
+			this.cleanViewer();
+			var picObj: ag1 = new ag1(-60, 5);
+			var pic: Bitmap = new Bitmap(picObj);
+			pic.x = -60;
+			pic.y = 5;
 
-function firstClick(e) {
-	cleanViewer();
-	var picObj: ag1 = new ag1();
-	var pic: Bitmap = new Bitmap(picObj);
-	pic.x = -60;
-	pic.y = 5;
+			this.webUrl = this.urlList[2]['url'];
+			viewer.addChild(pic);
+		}
+		
+		private function getList(e: Event) {
+			this.urlList = this.urlData.getData()[0]
+		}
 
-	webUrl = "https://college.projectmast.com";
-	viewer.addChild(pic);
-}
+		private function homeClick(e: MouseEvent) {
+			this.cleanViewer();
+			var picObj: home = new home(0, 0);
+			var pic: Bitmap = new Bitmap(picObj);
 
-navi_mc.secondBtn.addEventListener(MouseEvent.CLICK, secondClick);
+			this.webUrl = this.urlList[3]['url'];
+			viewer.addChild(pic);
+		}
 
-function secondClick(e) {
-	cleanViewer();
-	var picObj: ag2 = new ag2();
-	var pic: Bitmap = new Bitmap(picObj);
-	pic.x = -75;
-	pic.y = 10;
+		private function openPage(e: MouseEvent) {
+			if (this.webUrl != null) {
+				navigateToURL(new URLRequest(webUrl), "_blank");
+			}
+		}
 
-	webUrl = "https://college.projectmast.com";
-	viewer.addChild(pic);
-}
+		private function mailto(e: MouseEvent): void {
+			navigateToURL(new URLRequest("mailto:prmast@projectmast.com"), "_blank");
+		}
 
-navi_mc.afroBtn.addEventListener(MouseEvent.CLICK, afroClick);
+		private function powerClick(e: MouseEvent) {
+			this.cleanViewer();
+			var picObj: mario = new mario(-65, 15);
+			var pic: Bitmap = new Bitmap(picObj);
+			pic.x = -65;
+			pic.y = 15;
 
-function afroClick(e) {
-	cleanViewer();
-	var picObj: kungfu = new kungfu();
-	var pic: Bitmap = new Bitmap(picObj);
-	pic.x = -75;
-	pic.y = 10;
+			this.webUrl = this.urlList[4]['url'];
+			viewer.addChild(pic);
+		}
 
-	webUrl = "https://college.projectmast.com";
-	viewer.addChild(pic);
-}
+		private function secondClick(e: MouseEvent) {
+			this.cleanViewer();
+			var picObj: ag2 = new ag2(-75, 10);
+			var pic: Bitmap = new Bitmap(picObj);
+			pic.x = -75;
+			pic.y = 10;
 
-navi_mc.fableBtn.addEventListener(MouseEvent.CLICK, fableClick);
-
-function fableClick(e) {
-	cleanViewer();
-	var picObj: lion = new lion();
-	var pic: Bitmap = new Bitmap(picObj);
-	pic.x = -75;
-	pic.y = 60;
-
-	webUrl = "https://college.projectmast.com";
-	viewer.addChild(pic);
-}
-
-navi_mc.powerBtn.addEventListener(MouseEvent.CLICK, powerClick);
-
-function powerClick(e) {
-	cleanViewer();
-	var picObj: mario = new mario();
-	var pic: Bitmap = new Bitmap(picObj);
-	pic.x = -65;
-	pic.y = 15;
-
-	webUrl = "https://college.projectmast.com";
-	viewer.addChild(pic);
-}
-
-function cleanViewer() {
-	while (viewer.numChildren > 0) {
-		viewer.removeChildAt(0);
+			this.webUrl = this.urlList[5]['url'];
+			viewer.addChild(pic);
+		}
 	}
 }

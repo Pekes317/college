@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"url": "assets/print/images/graphic_samples.jpg",
+		"x": 385,
+		"y": 90
+	},
+	{
+		"id": 2,
+		"url": "assets/print/images/CH-Navigation.jpg",
+		"x": 367,
+		"y": 250
+	},
+	{
+		"id": 3,
+		"url": "assets/print/images/shelf.jpg",
+		"x": 385,
+		"y": 110
+	}
+]

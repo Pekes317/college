@@ -1,0 +1,50 @@
+[
+	{
+		"id": 1,
+		"url": "assets/print/images/landscapeflat.jpg",
+		"x": 480,
+		"y": 105
+	},
+	{
+		"id": 2,
+		"url": "assets/print/images/conflictflat.jpg",
+		"x": 480,
+		"y": 105
+	},
+	{
+		"id": 3,
+		"url": "assets/print/images/depthflat.jpg",
+		"x": 480,
+		"y": 105
+	},
+	{
+		"id": 4,
+		"url": "assets/print/images/hierarchyflat.jpg",
+		"x": 480,
+		"y": 105
+	},
+	{
+		"id": 5,
+		"url": "assets/print/images/infinityflat.jpg",
+		"x": 480,
+		"y": 105
+	},
+	{
+		"id": 6,
+		"url": "assets/print/images/unityflat.jpg",
+		"x": 480,
+		"y": 105
+	},
+	{
+		"id": 7,
+		"url": "assets/print/images/virtual-real.jpg",
+		"x": 480,
+		"y": 140
+	},
+	{
+		"id": 8,
+		"url": "assets/print/images/hellspace.jpg",
+		"x": 342.5,
+		"y": 152.5
+	}
+]
