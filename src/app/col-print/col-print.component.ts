@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import 'swfobject';
 
 @Component({
   selector: 'app-col-print',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColPrintComponent implements OnInit {
 
+  @ViewChild('prints') aminVid: ElementRef;
+
+  params = {
+    play: true,
+    loop: true,
+    quality: 'high',
+    wmode: 'transparent'
+  };
+  swf: swfobject.SwfObject = swfobject;
+
   constructor() { }
 
   ngOnInit() {
+    let el = this.aminVid.nativeElement;
+    this.swf.embedSWF(
+      'assets/print/Graphic.swf', el,
+      '1072', '603', '26', '', {}, this.params);
   }
 
 }

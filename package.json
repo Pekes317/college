@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "universal": "ng build --prod && ng build --prod --app college --output-hashing=none"
+    "universal": "ng build --prod && ng build --prod --app college --output-hashing=none",
+    "univ-dev": "ng build --aot && ng build --aot --app college --output-hashing=none"
   },
   "private": true,
   "dependencies": {

@@ -1,37 +1,50 @@
-﻿import flash.external.ExternalInterface;
+﻿package {
 
-btn_home.addEventListener(MouseEvent.CLICK, homeClick);
+	import flash.external.ExternalInterface;
+	import flash.events.MouseEvent;
+	import flash.display.MovieClip;
 
-function homeClick(e) {
-	ExternalInterface.call('actionCall', '');
-}
+	public class Navigation extends MovieClip {
 
-btn_img.addEventListener(MouseEvent.CLICK, imgClick);
+		public function Navigation() {
+			// constructor code
+			this.addListeners();
+		}
 
-function imgClick(e) {
-	ExternalInterface.call('actionCall', 'images');
-}
+		private function addListeners() {
+			btn_home.addEventListener(MouseEvent.CLICK, this.homeClick);
+			btn_img.addEventListener(MouseEvent.CLICK, this.imgClick);
+			btn_anim.addEventListener(MouseEvent.CLICK, this.animClick);
+			btn_sound.addEventListener(MouseEvent.CLICK, this.soundClick);
+			btn_web.addEventListener(MouseEvent.CLICK, this.webClick);
+			btn_about.addEventListener(MouseEvent.CLICK, this.aboutClick);
+		}
 
-btn_anim.addEventListener(MouseEvent.CLICK, animClick);
 
-function animClick(e) {
-	ExternalInterface.call('actionCall', 'animation');
-}
+		private function homeClick(e: MouseEvent) {
+			ExternalInterface.call('actionCall', '');
+		}
 
-btn_sound.addEventListener(MouseEvent.CLICK, soundClick);
+		private function imgClick(e: MouseEvent) {
+			ExternalInterface.call('actionCall', 'images');
+		}
 
-function soundClick(e) {
-	ExternalInterface.call('actionCall', 'sounds');
-}
+		private function animClick(e: MouseEvent) {
+			ExternalInterface.call('actionCall', 'animation');
+		}
 
-btn_web.addEventListener(MouseEvent.CLICK, webClick);
+		private function soundClick(e: MouseEvent) {
+			ExternalInterface.call('actionCall', 'sounds');
+		}
 
-function webClick(e) {
-	ExternalInterface.call('actionCall', 'web');
-}
+		private function webClick(e: MouseEvent) {
+			ExternalInterface.call('actionCall', 'web');
+		}
 
-btn_about.addEventListener(MouseEvent.CLICK, aboutClick);
 
-function aboutClick(e) {
-	ExternalInterface.call('actionCall', 'about');
+		private function aboutClick(e: MouseEvent) {
+			ExternalInterface.call('actionCall', 'about');
+		}
+	}
+
 }
