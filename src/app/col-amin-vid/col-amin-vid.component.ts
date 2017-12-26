@@ -19,13 +19,21 @@ export class ColAminVidComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    if (window['swfobject'] !== undefined) {
+      this.loadFlash();
+    }
+  }
 
-  startFlash(evt) {
+  loadFlash() {
     let el = this.aminVid.nativeElement;
     this.swf = swfobject;
     this.swf.embedSWF(
       'assets/anim/AnimVid.swf', el,
       '1072', '603', '26', '', {}, this.params);
+  }
+
+  startFlash(evt) {
+    this.loadFlash();
   }
 }

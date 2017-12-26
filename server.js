@@ -2,15 +2,6 @@
 
 require('zone.js/dist/zone-node');
 
-const domino = require('domino');
-const fs = require('fs');
-const path = require('path');
-const template = fs.readFileSync(path.join(__dirname, 'dist', 'index.html')).toString();
-const win = domino.createWindow(template);
-global['window'] = win;
-global['document'] = win.document;
-global['navigator'] = win['navigator'];
-
 const express = require('express');
 const ngUniversal = require('@nguniversal/express-engine');
 const appServer = require('./dist-server/main.bundle');

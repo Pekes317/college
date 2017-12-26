@@ -19,13 +19,21 @@ export class ColSoundComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    if (window['swfobject'] !== undefined) {
+      this.loadFlash();
+    }
+  }
 
-  startFlash(evt) {
+  loadFlash() {
     let el = this.sound.nativeElement;
     this.swf = swfobject;
     this.swf.embedSWF(
       'assets/sound/Sounds.swf', el,
       '1072', '603', '26', '', {}, this.params);
+  }
+
+  startFlash(evt) {
+    this.loadFlash();
   }
 }

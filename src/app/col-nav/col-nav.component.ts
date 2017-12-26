@@ -23,14 +23,22 @@ export class ColNavComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    if (window['swfobject'] !== undefined) {
+      this.loadFlash();
+    }
+  }
 
-  startFlash(evt) {
+  loadFlash() {
     let el = this.flashNav.nativeElement;
     this.swf = swfobject;
     this.swf.embedSWF(
       'assets/nav/Navigation.swf', el,
       '682', '91', '26', '', {}, this.params);
+  }
+
+  startFlash(evt) {
+    this.loadFlash();
   }
 
   myNav(evt) {
