@@ -22,8 +22,7 @@
         "styles.scss"
       ],
       "scripts": [
-        "scripts.ts",
-        "../node_modules/swfobject/index.js"
+        "scripts.ts"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -49,8 +48,7 @@
         "styles.scss"
       ],
       "scripts": [
-        "scripts.ts",
-        "../node_modules/swfobject/index.js"
+        "scripts.ts"     
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

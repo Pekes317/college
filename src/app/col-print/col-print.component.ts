@@ -1,14 +1,14 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import 'swfobject';
 
 @Component({
   selector: 'app-col-print',
+  host: { '(document:Flash)': 'startFlash($event)' },
   templateUrl: './col-print.component.html',
   styleUrls: ['./col-print.component.scss']
 })
 export class ColPrintComponent implements OnInit {
 
-  @ViewChild('prints') aminVid: ElementRef;
+  @ViewChild('prints') imgs: ElementRef;
 
   params = {
     play: true,
@@ -16,15 +16,17 @@ export class ColPrintComponent implements OnInit {
     quality: 'high',
     wmode: 'transparent'
   };
-  swf: swfobject.SwfObject = swfobject;
+  swf: swfobject.SwfObject;
 
   constructor() { }
 
-  ngOnInit() {
-    let el = this.aminVid.nativeElement;
+  ngOnInit() { }
+
+  startFlash(evt) {
+    let el = this.imgs.nativeElement;
+    this.swf = swfobject;
     this.swf.embedSWF(
       'assets/print/Graphic.swf', el,
       '1072', '603', '26', '', {}, this.params);
   }
-
 }

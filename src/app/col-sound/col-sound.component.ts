@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import 'swfobject';
 
 @Component({
   selector: 'app-col-sound',
+   host: { '(document:Flash)': 'startFlash($event)' },
   templateUrl: './col-sound.component.html',
   styleUrls: ['./col-sound.component.scss']
 })
@@ -15,12 +15,15 @@ export class ColSoundComponent implements OnInit {
     quality: 'high',
     wmode: 'transparent'
   };
-  swf: swfobject.SwfObject = swfobject;
+  swf: swfobject.SwfObject;
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  startFlash(evt) {
     let el = this.sound.nativeElement;
+    this.swf = swfobject;
     this.swf.embedSWF(
       'assets/sound/Sounds.swf', el,
       '1072', '603', '26', '', {}, this.params);

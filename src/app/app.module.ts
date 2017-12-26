@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { routing, routingProviders } from './app.routing';
@@ -12,6 +11,7 @@ import { ColSoundComponent } from './col-sound/col-sound.component';
 import { ColWebComponent } from './col-web/col-web.component';
 import { ColPrintComponent } from './col-print/col-print.component';
 import { ColAboutComponent } from './col-about/col-about.component';
+import { ColSwfService } from './shared/col-swf.service';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,10 @@ import { ColAboutComponent } from './col-about/col-about.component';
   imports: [
     BrowserModule.withServerTransition({ appId: 'college' }),
     FormsModule,
-    HttpModule,
     routing
   ],
   providers: [
+    ColSwfService,
     routingProviders
   ],
   bootstrap: [AppComponent]
