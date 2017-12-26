@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { browser } from 'protractor';
 
 @Component({
   selector: 'app-col-nav',
@@ -21,7 +22,7 @@ export class ColNavComponent implements OnInit {
   };
   swf: swfobject.SwfObject;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private zone: NgZone) { }
 
   ngOnInit() {
     if (window['swfobject'] !== undefined) {
@@ -32,9 +33,11 @@ export class ColNavComponent implements OnInit {
   loadFlash() {
     let el = this.flashNav.nativeElement;
     this.swf = swfobject;
-    this.swf.embedSWF(
-      'assets/nav/Navigation.swf', el,
-      '682', '91', '26', '', {}, this.params);
+    this.zone.runOutsideAngular(() => {
+      this.swf.embedSWF(
+        'assets/nav/Navigation.swf', el,
+        '682', '91', '26', '', {}, this.params);
+    })
   }
 
   startFlash(evt) {

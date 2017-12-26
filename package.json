@@ -28,6 +28,7 @@
     "@nguniversal/express-engine": "^5.0.0-beta.5",
     "core-js": "^2.5.3",
     "custom-event-polyfill": "^0.3.0",
+    "detect-browser": "^2.0.0",
     "express": "^4.16.2",
     "rxjs": "^5.5.6",
     "swfobject": "^2.2.1",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@angular/cli": "1.6.2",
     "@angular/compiler-cli": "^5.1.2",
+    "@types/detect-browser": "^2.0.0",
     "@types/jasmine": "2.8.2",
     "@types/node": "~8.5.2",
     "@types/swfobject": "^2.2.27",
