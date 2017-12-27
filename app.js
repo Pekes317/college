@@ -1,11 +1,9 @@
 'use strict';
 
-require('zone.js/dist/zone-node');
-
 const express = require('express');
 const ngUniversal = require('@nguniversal/express-engine');
 const appServer = require('./dist-server/main.bundle');
-const port = process.env.PORT || '50100';
+const port = process.env.PORT || '50300';
 
 function angularRouter(req, res) {
 
@@ -35,10 +33,12 @@ app.engine('html', ngUniversal.ngExpressEngine({
 }));
 
 app.set('view engine', 'html');
-app.set('views', 'dist');
+app.set('views', `${__dirname}/dist`);
 
 app.get('*', angularRouter);
 
 app.listen(port, () => {
-	console.log(`Listening on ${port}`);
+    console.log(`Listening on ${port}`);
 });
+
+module.exports = app;
