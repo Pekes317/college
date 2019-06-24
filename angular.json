@@ -24,9 +24,12 @@
             "tsConfig": "apps/college/tsconfig.app.json",
             "assets": [
               "apps/college/src/favicon.ico",
-              "apps/college/src/assets"
+              "apps/college/src/assets",
+              "apps/college/src/manifest.webmanifest"
             ],
-            "styles": ["apps/college/src/styles.scss"],
+            "styles": [
+              "apps/college/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -52,7 +55,9 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/college/ngsw-config.json"
             }
           }
         },
@@ -81,7 +86,9 @@
               "apps/college/tsconfig.app.json",
               "apps/college/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -156,7 +163,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -185,7 +194,9 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -210,7 +221,9 @@
               "libs\\api-interface\\tsconfig.lib.json",
               "libs/api-interface/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
