@@ -30,7 +30,7 @@ export class ColWebComponent implements OnInit {
     const el = this.web.nativeElement;
     this.swf = swfobject;
     this.swf.embedSWF(
-      'assets/web/Web.swf',
+      'assets/web/web.swf',
       el,
       '1072',
       '603',

@@ -43,7 +43,7 @@ export class ColNavComponent implements OnInit {
     this.swf = swfobject;
     this.zone.runOutsideAngular(() => {
       this.swf.embedSWF(
-        'assets/nav/Navigation.swf',
+        'assets/nav/navigation.swf',
         el,
         '682',
         '91',

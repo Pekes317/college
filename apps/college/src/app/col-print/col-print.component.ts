@@ -30,7 +30,7 @@ export class ColPrintComponent implements OnInit {
     const el = this.imgs.nativeElement;
     this.swf = swfobject;
     this.swf.embedSWF(
-      'assets/print/Graphic.swf',
+      'assets/print/graphic.swf',
       el,
       '1072',
       '603',

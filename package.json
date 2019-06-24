@@ -48,7 +48,6 @@
     "@nrwl/angular": "8.1.2",
     "core-js": "^3.1.4",
     "detect-browser": "^4.5.1",
-    "es-swfobject": "^3.0.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "~6.4.0",
     "swfobject": "^2.2.1",
