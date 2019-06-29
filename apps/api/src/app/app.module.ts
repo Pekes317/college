@@ -5,14 +5,13 @@ import { join } from 'path';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-
-const path = join(process.cwd(), 'dist');
+import { ssrPath } from '../util/env';
 
 @Module({
   imports: [
     AngularUniversalModule.forRoot({
-      bundle: loadPackage(join(path, 'server', 'main.js'), 'SSR'),
-      viewsPath: join(path, 'views')
+      bundle: loadPackage(join(ssrPath, 'server', 'main.js'), 'SSR'),
+      viewsPath: join(ssrPath, 'views')
     })
   ],
   controllers: [AppController],
