@@ -8,13 +8,13 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 const win = createWindow();
-const server = new ExpressAdapter();
+const express = new ExpressAdapter();
 
 global['window'] = win;
 global['document'] = win.document;
 
 const bootstrap = async () => {
-  const app = await NestFactory.create(AppModule, server);
+  const app = await NestFactory.create(AppModule, express);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   if (environment.production) {
@@ -29,4 +29,4 @@ const bootstrap = async () => {
 };
 
 bootstrap();
-export const college = https.onRequest(server.getInstance());
+export const server = https.onRequest(express.getInstance());

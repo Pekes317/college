@@ -12,7 +12,7 @@
       },
       {
         "source": "**",
-        "function": "api"
+        "function": "server"
       }
     ]
   }

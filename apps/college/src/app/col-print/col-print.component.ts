@@ -1,13 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'college-col-print',
-  // tslint:disable-next-line: no-host-metadata-property
-  host: { '(document:Flash)': 'startFlash($event)' },
   templateUrl: './col-print.component.html',
   styleUrls: ['./col-print.component.scss']
 })
 export class ColPrintComponent implements OnInit {
+  @HostListener('document:Flash') flash = this.startFlash;
   @ViewChild('prints', { static: true }) imgs: ElementRef;
 
   params = {
@@ -29,16 +28,7 @@ export class ColPrintComponent implements OnInit {
   loadFlash() {
     const el = this.imgs.nativeElement;
     this.swf = swfobject;
-    this.swf.embedSWF(
-      'assets/print/graphic.swf',
-      el,
-      '1072',
-      '603',
-      '26',
-      '',
-      {},
-      this.params
-    );
+    this.swf.embedSWF('assets/print/graphic.swf', el, '1072', '603', '26', '', {}, this.params);
   }
 
   startFlash() {

@@ -1,12 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'college-col-amin-vid',
-  host: { '(document:Flash)': 'startFlash($event)' },
   templateUrl: './col-amin-vid.component.html',
   styleUrls: ['./col-amin-vid.component.scss']
 })
 export class ColAminVidComponent implements OnInit {
+  @HostListener('document:Flash') flash = this.startFlash;
   @ViewChild('animVid', { static: true }) aminVid: ElementRef;
 
   params = {
@@ -28,16 +28,7 @@ export class ColAminVidComponent implements OnInit {
   loadFlash() {
     const el = this.aminVid.nativeElement;
     this.swf = swfobject;
-    this.swf.embedSWF(
-      'assets/anim/AnimVid.swf',
-      el,
-      '1072',
-      '603',
-      '26',
-      '',
-      {},
-      this.params
-    );
+    this.swf.embedSWF('assets/anim/AnimVid.swf', el, '1072', '603', '26', '', {}, this.params);
   }
 
   startFlash() {

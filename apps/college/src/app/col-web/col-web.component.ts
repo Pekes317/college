@@ -1,13 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'college-col-web',
-  // tslint:disable-next-line: no-host-metadata-property
-  host: { '(document:Flash)': 'startFlash($event)' },
   templateUrl: './col-web.component.html',
   styleUrls: ['./col-web.component.scss']
 })
 export class ColWebComponent implements OnInit {
+  @HostListener('document:Flash') flash = this.startFlash;
   @ViewChild('web', { static: true }) web: ElementRef;
 
   params = {
@@ -29,16 +28,7 @@ export class ColWebComponent implements OnInit {
   loadFlash() {
     const el = this.web.nativeElement;
     this.swf = swfobject;
-    this.swf.embedSWF(
-      'assets/web/web.swf',
-      el,
-      '1072',
-      '603',
-      '26',
-      '',
-      {},
-      this.params
-    );
+    this.swf.embedSWF('assets/web/web.swf', el, '1072', '603', '26', '', {}, this.params);
   }
 
   startFlash() {
