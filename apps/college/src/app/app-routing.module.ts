@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'web', component: ColWebComponent },
   { path: 'images', component: ColPrintComponent },
   { path: 'animation', component: ColAminVidComponent },
-  { path: 'sounds', component: ColSoundComponent }
+  { path: 'sounds', component: ColSoundComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { loadPackage } from '@nestjs/common/utils/load-package.util';
-import { AngularUniversalModule } from '@nestjs/ng-universal';
+import { AngularUniversalModule, applyDomino } from '@nestjs/ng-universal';
 import { join } from 'path';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+
+applyDomino({}, join(__dirname, 'views', 'index.html'));
 
 @Module({
   imports: [

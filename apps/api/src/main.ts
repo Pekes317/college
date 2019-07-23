@@ -1,17 +1,12 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import { createWindow } from 'domino';
-import { https } from 'firebase-functions';
+import { runWith } from 'firebase-functions';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-const win = createWindow();
 const express = new ExpressAdapter();
-
-global['window'] = win;
-global['document'] = win.document;
 
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule, express);
@@ -29,4 +24,7 @@ const bootstrap = async () => {
 };
 
 bootstrap();
-export const server = https.onRequest(express.getInstance());
+export const server = runWith({
+  memory: '512MB',
+  timeoutSeconds: 100
+}).https.onRequest(express.getInstance());

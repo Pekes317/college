@@ -13,6 +13,7 @@ import { ColWebComponent } from './col-web/col-web.component';
 import { ColPrintComponent } from './col-print/col-print.component';
 import { ColAboutComponent } from './col-about/col-about.component';
 import { environment } from '../environments/environment';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,9 +30,10 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    ServiceWorkerModule.register('/ngsw-worker.js', {
       enabled: environment.production
-    })
+    }),
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
