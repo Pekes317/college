@@ -13,7 +13,6 @@ const bootstrap = async () => {
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   if (environment.production) {
-    Logger.log('Running on Firebase');
     app.init();
   } else {
     const port = process.env.port || 3333;
@@ -24,7 +23,4 @@ const bootstrap = async () => {
 };
 
 bootstrap();
-export const server = runWith({
-  memory: '512MB',
-  timeoutSeconds: 100
-}).https.onRequest(express.getInstance());
+export const server = runWith({}).https.onRequest(express.getInstance());

@@ -1,7 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,8 +11,6 @@ import { ColSoundComponent } from './col-sound/col-sound.component';
 import { ColWebComponent } from './col-web/col-web.component';
 import { ColPrintComponent } from './col-print/col-print.component';
 import { ColAboutComponent } from './col-about/col-about.component';
-import { environment } from '../environments/environment';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,18 +21,14 @@ import { RouterModule } from '@angular/router';
     ColSoundComponent,
     ColWebComponent,
     ColPrintComponent,
-    ColAboutComponent
+    ColAboutComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {
-      enabled: environment.production
-    }),
-    RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

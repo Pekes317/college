@@ -6,7 +6,7 @@ import { ColSwfService } from './shared/col-swf.service';
 @Component({
   selector: 'college-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   private browser = detect();

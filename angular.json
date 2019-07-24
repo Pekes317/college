@@ -22,13 +22,13 @@
             "main": "apps/college/src/main.ts",
             "polyfills": "apps/college/src/polyfills.ts",
             "tsConfig": "apps/college/tsconfig.app.json",
+            "aot": true,
             "assets": [
               "apps/college/src/favicon.ico",
-              "apps/college/src/assets",
-              "apps/college/src/manifest.webmanifest"
+              "apps/college/src/assets"
             ],
             "styles": ["apps/college/src/styles.scss"],
-            "scripts": ["apps/college/src/scripts.ts"]
+            "scripts": ["apps/college/src/scripts.js"]
           },
           "configurations": {
             "production": {
@@ -53,9 +53,7 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ],
-              "serviceWorker": true,
-              "ngswConfigPath": "apps/college/ngsw-config.json"
+              ]
             }
           }
         },
@@ -84,7 +82,7 @@
               "apps/college/tsconfig.app.json",
               "apps/college/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!apps/college/**"]
           }
         },
         "test": {
@@ -117,20 +115,6 @@
               }
             }
           }
-        },
-        "app-shell": {
-          "builder": "@angular-devkit/build-angular:app-shell",
-          "options": {
-            "browserTarget": "college:build",
-            "serverTarget": "college:server",
-            "route": "shell"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "college:build:production",
-              "serverTarget": "college:server:production"
-            }
-          }
         }
       }
     },
@@ -155,7 +139,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/college-e2e/tsconfig.e2e.json"
+            "tsConfig": "apps/college-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/college-e2e/**"]
           }
         }
       }
@@ -202,7 +187,7 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!apps/api/**"]
           }
         },
         "test": {
@@ -216,7 +201,7 @@
     },
     "api-interface": {
       "root": "libs/api-interface",
-      "sourceRoot": "libs\\api-interface\\src",
+      "sourceRoot": "libs/api-interface/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -224,10 +209,10 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs\\api-interface\\tsconfig.lib.json",
+              "libs/api-interface/tsconfig.lib.json",
               "libs/api-interface/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!libs/api-interface/**"]
           }
         },
         "test": {
