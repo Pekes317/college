@@ -11,6 +11,8 @@ import { ColSoundComponent } from './col-sound/col-sound.component';
 import { ColWebComponent } from './col-web/col-web.component';
 import { ColPrintComponent } from './col-print/col-print.component';
 import { ColAboutComponent } from './col-about/col-about.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { ColAboutComponent } from './col-about/col-about.component';
     AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],

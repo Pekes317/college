@@ -25,7 +25,8 @@
             "aot": true,
             "assets": [
               "apps/college/src/favicon.ico",
-              "apps/college/src/assets"
+              "apps/college/src/assets",
+              "apps/college/src/manifest.webmanifest"
             ],
             "styles": ["apps/college/src/styles.scss"],
             "scripts": ["apps/college/src/scripts.js"]
@@ -53,7 +54,9 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/college/ngsw-config.json"
             }
           }
         },
